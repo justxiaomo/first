@@ -2,6 +2,7 @@
 <content>
     <resources>
          <img id="bg_party" href="resources/pic/other/party.png" />
+         <img id="dress" href="resources/pic/dress/dress.png" />
          <path id="m_party" href="resources/music/party.mp3" />
          <path id="m_a_party" href="resources/music/party_a.mp3" />
          <script id="lua_start" href="script/start.lua" />
@@ -15,6 +16,9 @@
                  <path name="bg_music" resId="m_party"/>
                  <path name="bg_a_music" resId="m_a_party"/>
              </effect>
+          <node id="n_dress" type="image" resId="dress" x="10" y="0">
+             
+          </node>
         
     </layer>
 </content>
