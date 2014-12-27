@@ -2,13 +2,21 @@
 <content>
     <resources>
          <img id="bg_party" href="resources/pic/other/party.png" />
+         
          <img id="dress" href="resources/pic/dress/dress.png" />
+         <img id="dress_a" href="resources/pic/dress/dress_a.png" />
+         <img id="dress_b" href="resources/pic/dress/dress_b.png" />
+         
          <path id="m_party" href="resources/music/party.mp3" />
          <path id="m_a_party" href="resources/music/party_a.mp3" />
+         
+         <path id="m_dress" href="resources/music/dress/dress.mp3"/>
          <script id="lua_start" href="script/start.lua" />
+         <script id="lua_show" href="script/show.lua" />
     </resources>
     <triggers>
           <event src="root"  message="in_page_begin" dst="init_game" />
+          <event src="n_dress" message="tap" dst="l_show_2" />
     </triggers>
     <layer id="root" x="0" y="0" width="1024" height="768">
           <node type="image" resId="bg_party"  x="0" y="0"/>
@@ -16,7 +24,19 @@
                  <path name="bg_music" resId="m_party"/>
                  <path name="bg_a_music" resId="m_a_party"/>
              </effect>
+          <node id="dress_1" type="image" resId="dress_a" x="210" y="88" 
+          visible="false" />
+          <node id="dress_2" type="image" resId="dress_b" x="210" y="88" 
+          visible="false" />
           <node id="n_dress" type="image" resId="dress" x="10" y="0">
+             <effect id="l_show_2" script="lua_show">
+                 <table name="nodes2">
+					<node name="1" resId="dress_1" />
+					<node name="2" resId="dress_2" />
+				 </table>
+				 <node name="name2" resId="dress_2" />
+                 <path name="bg_music2" resId="m_dress" />
+             </effect>
              
           </node>
         
